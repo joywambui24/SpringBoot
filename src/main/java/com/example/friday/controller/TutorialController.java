@@ -38,5 +38,9 @@ public class TutorialController {
         return tutorialService.updateTutorial(id, dto);
     }
 
+    @DeleteMapping(value = "/delete")
+    public String deleteTutorial(@RequestParam Long id){
+        return tutorialService.deleteTutorial(id);
+    }
 
 }

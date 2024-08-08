@@ -13,4 +13,5 @@ public interface TutorialService {
     Tutorial createTutorial(TutorialDto dto);
     Optional<Tutorial> getTutorialById(Long id);
     Tutorial updateTutorial(Long id, TutorialDto dto);
+    String deleteTutorial(Long id);
 }

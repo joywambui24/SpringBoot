@@ -46,4 +46,17 @@ public class TutorialServiceImplementation implements TutorialService{
        }
         return null;
     }
+
+    @Override
+    public String deleteTutorial(Long id) {
+        Optional<Tutorial> tutorial = tutorialRepository.findById(id);
+        if(tutorial.isPresent()){
+           Tutorial data = tutorial.get();
+           tutorialRepository.deleteById(data.getId());
+
+           return "Tutorial id " +  data.getId() + " is deleted";
+        }
+
+        return "";
+    }
 }

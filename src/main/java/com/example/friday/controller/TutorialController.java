@@ -8,6 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/tutorial")
@@ -28,8 +29,8 @@ public class TutorialController {
     }
 
     @GetMapping(value = "/getById", produces = "application/json")
-    public void getById(@RequestParam Long id){
-        System.out.println(id);
+    public Optional<Tutorial> getById(@RequestParam Long id){
+        return tutorialService.getTutorialById(id);
     }
 
 

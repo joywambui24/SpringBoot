@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TutorialServiceImplementation implements TutorialService{
@@ -26,5 +27,10 @@ public class TutorialServiceImplementation implements TutorialService{
                 dto.title, dto.description, dto.published
         );
         return tutorialRepository.save(tutorial);
+    }
+
+    @Override
+    public Optional<Tutorial> getTutorialById(Long id) {
+        return tutorialRepository.findById(id);
     }
 }

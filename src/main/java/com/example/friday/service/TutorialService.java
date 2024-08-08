@@ -5,9 +5,11 @@ import com.example.friday.model.TutorialDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface TutorialService {
     // abstraction
     List<Tutorial> getAllTutorials();
     Tutorial createTutorial(TutorialDto dto);
+    Optional<Tutorial> getTutorialById(Long id);
 }

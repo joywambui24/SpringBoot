@@ -12,4 +12,5 @@ public interface TutorialService {
     List<Tutorial> getAllTutorials();
     Tutorial createTutorial(TutorialDto dto);
     Optional<Tutorial> getTutorialById(Long id);
+    Tutorial updateTutorial(Long id, TutorialDto dto);
 }

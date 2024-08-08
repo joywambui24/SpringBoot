@@ -33,5 +33,10 @@ public class TutorialController {
         return tutorialService.getTutorialById(id);
     }
 
+    @PutMapping(value = "/updateTutorial", consumes = "application/json", produces = "application/json")
+    public Tutorial updateTutorial(@RequestParam Long id, @RequestBody @Validated TutorialDto dto){
+        return tutorialService.updateTutorial(id, dto);
+    }
+
 
 }

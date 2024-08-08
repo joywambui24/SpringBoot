@@ -33,4 +33,17 @@ public class TutorialServiceImplementation implements TutorialService{
     public Optional<Tutorial> getTutorialById(Long id) {
         return tutorialRepository.findById(id);
     }
+
+    @Override
+    public Tutorial updateTutorial(Long id, TutorialDto dto) {
+       Optional<Tutorial> tutorial = tutorialRepository.findById(id);
+       if(tutorial.isPresent()){
+           Tutorial data = tutorial.get();
+           data.setTitle(dto.title);
+           data.setDescription(dto.description);
+           data.setPublished(dto.published);
+           return tutorialRepository.save(data);
+       }
+        return null;
+    }
 }

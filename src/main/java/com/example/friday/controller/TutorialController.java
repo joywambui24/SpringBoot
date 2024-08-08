@@ -27,6 +27,10 @@ public class TutorialController {
        return tutorialService.createTutorial(dto);
     }
 
+    @GetMapping(value = "/getById", produces = "application/json")
+    public void getById(@RequestParam Long id){
+        System.out.println(id);
+    }
 
 
 }

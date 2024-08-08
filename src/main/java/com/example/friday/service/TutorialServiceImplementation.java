@@ -1,6 +1,7 @@
 package com.example.friday.service;
 
 import com.example.friday.model.Tutorial;
+import com.example.friday.model.TutorialDto;
 import com.example.friday.repository.TutorialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,10 @@ public class TutorialServiceImplementation implements TutorialService{
     }
 
     @Override
-    public Tutorial createTutorial() {
-        return null;
+    public Tutorial createTutorial(TutorialDto dto) {
+        Tutorial tutorial = new Tutorial(
+                dto.title, dto.description, dto.published
+        );
+        return tutorialRepository.save(tutorial);
     }
 }

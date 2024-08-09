@@ -17,3 +17,9 @@
 *  @ResponseBody: It binds the method return value to the response body. It tells the Spring Boot Framework to serialize a return an object into JSON and XML format.
 *  @PathVariable: It is used to extract the values from the URI. It is most suitable for the RESTful web service, where the URL contains a path variable. We can define multiple @PathVariable in a method.
 *  @RequestParam: It is used to extract the query parameters form the URL. It is also known as a query parameter. It is most suitable for web applications. It can specify default values if the query parameter is not present in the URL.
+*  @Autowired: is used for automatic dependency injection. This means that Spring will automatically provide the required dependencies for a class, without you having to manually set them up.
+*  @Data:The @Data annotation in Project Lombok is a convenient shortcut that bundles several other annotations into one. When you use @Data on a class, it automatically generates:
+   Getters,setters, to string(), equal() and hash code() methods 
+*  @RestController: makes it easier to build web services that can handle HTTP requests and send responses in a format like JSON.
+*  @Override: is used to indicate that a method in a subclass is intended to override a method in its superclass.
+* 

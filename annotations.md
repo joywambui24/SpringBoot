@@ -22,4 +22,4 @@
    Getters,setters, to string(), equal() and hash code() methods 
 *  @RestController: makes it easier to build web services that can handle HTTP requests and send responses in a format like JSON.
 *  @Override: is used to indicate that a method in a subclass is intended to override a method in its superclass.
-* 
+*

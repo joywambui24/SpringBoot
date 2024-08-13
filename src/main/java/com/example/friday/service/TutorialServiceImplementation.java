@@ -1,5 +1,6 @@
 package com.example.friday.service;
 
+import com.example.friday.model.Response;
 import com.example.friday.model.Tutorial;
 import com.example.friday.model.TutorialDto;
 import com.example.friday.repository.TutorialRepository;
@@ -17,8 +18,14 @@ public class TutorialServiceImplementation implements TutorialService{
     private TutorialRepository tutorialRepository;
 
     @Override
-    public List<Tutorial> getAllTutorials() {
-        return tutorialRepository.findAll();
+    public Response<List<Tutorial>> getAllTutorials() {
+        List<Tutorial> tutorials = tutorialRepository.findAll();
+
+        if(tutorials.isEmpty()){
+            return new Response<>(false, "tutorials is empty", null);
+        } else {
+            return new Response<>(true, "successful", tutorials);
+        }
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.friday.controller;
 
+import com.example.friday.model.Response;
 import com.example.friday.model.Tutorial;
 import com.example.friday.model.TutorialDto;
 import com.example.friday.service.TutorialService;
@@ -18,7 +19,7 @@ public class TutorialController {
     private TutorialService tutorialService;
 
     @GetMapping("/getAllTutorials")
-    public List<Tutorial> getAllTutorials(){
+    public Response<List<Tutorial>> getAllTutorials(){
         return tutorialService.getAllTutorials();
     }
 

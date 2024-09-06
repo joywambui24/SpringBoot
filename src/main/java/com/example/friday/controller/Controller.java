@@ -11,7 +11,7 @@ public class Controller {
 
 
     @GetMapping("/hello")
-    public String hello(){
+    public String getHello(){
         return "friday for springBoot";
     }
 
